@@ -1,0 +1,33 @@
+﻿
+@model ProdutoModel;
+
+<link rel="stylesheet" href="~/css/CadastrarProdutos.css">
+
+<div class="Form-Container">
+    @if (TempData["Sucesso"] != null)
+        {
+            <p style="color:green">@TempData["Sucesso"]</p>
+        }
+        @if (TempData["ERRO"] != null)
+        {
+            <p style="color:red">@TempData["ERRO"]</p>
+        }
+    <form asp-action="CadastrarProdutos" method="post">
+
+
+
+        <h2>Cadastrar Produto</h2>
+        <div class="Formulario">
+            <div id="nomeProduto">
+                <label>Nome Produto</label>
+                <input  type="text" id="nome " name="nomeProduto" value="" placeholder="Digite o nome do produto" />
+            </div>
+            <div id="valorProduto">
+                <label>Valor Produto</label>
+                <input  type="text" id="nome " name="valorProduto" value="" placeholder="Digite o valor do produto" />
+            </div>
+            <button type="submit">Cadastrar</button>
+
+        </div>
+    </form>
+</div>

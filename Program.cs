@@ -1,3 +1,6 @@
+using ProjetoWeb.Dao;
+using ProjetoWeb.Service;
+
 namespace ProjetoWeb
 {
     public class Program
@@ -6,8 +9,15 @@ namespace ProjetoWeb
         {
             var builder = WebApplication.CreateBuilder(args);
 
+
+
+
+            builder.Services.AddScoped<IProdutoDAO, ProdutoDAO>();
+            builder.Services.AddScoped<ProdutoService>();
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+           
 
             var app = builder.Build();
 
@@ -18,7 +28,7 @@ namespace ProjetoWeb
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
+      
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -28,7 +38,7 @@ namespace ProjetoWeb
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Produto}/{action=CadastrarProdutos}/{id?}");
 
             app.Run();
         }

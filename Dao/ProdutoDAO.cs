@@ -18,7 +18,7 @@ namespace ProjetoWeb.Dao
             FirebirdConnection.OpenConnection(fbConnection);
 
             string queryInsert = "INSERT INTO produtos(nomeProduto,valorProduto) VALUES(@nomeProduto,@valorProduto)";
-
+           
             using (var cmdInsert = new FbCommand(queryInsert, fbConnection))
             {
                 cmdInsert.Parameters.AddWithValue("@nomeProduto",produtoModel.nomeProduto);

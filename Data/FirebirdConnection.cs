@@ -5,7 +5,15 @@ namespace ProjetoWeb.Data
     public class FirebirdConnection
     {
 
-        private static readonly string conexaoString;
+        private static readonly string conexaoString =
+               @"User=SYSDBA;
+      Password=masterkey;
+      Database=C:\Users\Darve\OneDrive\Documentos\C#\Banco de dados\BANCO_TESTE.FDB;
+      DataSource=localhost;
+      Port=3050;
+      Dialect=3;
+      Charset=UTF8;";
+
 
         public static FbConnection GetFbConnection()
         {

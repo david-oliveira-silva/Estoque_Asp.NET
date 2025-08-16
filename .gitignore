@@ -1,0 +1,40 @@
+# ============================
+# ASP.NET Core / C# .gitignore
+# ============================
+
+# Pastas de build
+bin/
+obj/
+
+# Pastas do Visual Studio
+.vs/
+
+# VS Code
+.vscode/
+
+# Logs e caches
+*.log
+*.cache
+
+# Arquivos temporários do usuário
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Pacotes do NuGet
+*.nupkg
+*.snupkg
+packages/
+
+# Publicação
+publish/
+
+# Arquivos de banco locais
+*.dbmdl
+*.mdf
+*.ldf
+
+# Test results
+TestResults/
+*.trx

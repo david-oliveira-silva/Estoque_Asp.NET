@@ -38,7 +38,7 @@ namespace ProjetoWeb
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Produto}/{action=CadastrarProdutos}/{id?}");
+                pattern: "{controller=Produto}/{action=ListarProdutos}/{id?}");
 
             app.Run();
         }

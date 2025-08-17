@@ -1,0 +1,26 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+.Tab-Container {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Tabela table {
+    border-collapse: collapse;
+    width: 600px;
+}
+
+.Tabela th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+.Tabela th {
+    background-color: rgb(51, 5, 255);
+    color: white
+}

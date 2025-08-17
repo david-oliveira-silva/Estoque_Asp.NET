@@ -17,7 +17,7 @@ namespace ProjetoWeb.Service
 
             if (string.IsNullOrEmpty(nomeProduto))
             {
-                throw new Exception("não do produto não pode ser vazio");
+                throw new Exception("Produto não pode ser vazio");
             }
             if (valorProduto < 0)
             {

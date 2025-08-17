@@ -1,0 +1,32 @@
+﻿@model List<ProdutoModel>
+
+<link rel="stylesheet" href="~/css/ListarProdutos.css">
+<div class="Tab-Container">
+    <div class="Tabela">
+       
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Valor</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var p in Model)
+                {
+                    <tr>
+
+                        <td>@p.produtoID</td>
+                        <td>@p.nomeProduto</td>
+                        <td>@p.valorProduto.ToString("C" ,new System.Globalization.CultureInfo("pt-BR"))</td>
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+                    
+    </div>
+</div>

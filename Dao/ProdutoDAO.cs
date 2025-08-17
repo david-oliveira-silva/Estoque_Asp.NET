@@ -59,7 +59,7 @@ namespace ProjetoWeb.Dao
                     {
 
                         ProdutoModel produtoModel = new ProdutoModel() { 
-                        produtoID = reader.GetInt32(reader.GetOrdinal("produtoUD")),
+                        produtoID = reader.GetInt32(reader.GetOrdinal("produtoID")),
                         nomeProduto = reader.GetString(reader.GetOrdinal("nomeProduto")),
                         valorProduto = reader.GetDecimal(reader.GetOrdinal("valorProduto"))
                         };

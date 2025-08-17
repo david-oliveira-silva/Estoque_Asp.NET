@@ -33,7 +33,14 @@ namespace ProjetoWeb.Controllers
                 return View();
             }
         }
+
         [HttpGet]
+        public IActionResult ListarProdutos()
+        {
+         var listProduto = produtoService.listarProdutos();
+            return View(listProduto);
+        }
+        
         public IActionResult CadastrarProdutos()
         {
            

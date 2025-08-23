@@ -24,3 +24,10 @@
     background-color: rgb(51, 5, 255);
     color: white
 }
+
+.Tabela td:last-child {
+    width: 150px; /* Ajuste conforme necessário */
+    white-space: nowrap; /* Evita quebra de linha */
+    text-align: center; /* Centraliza os botões */
+}
+

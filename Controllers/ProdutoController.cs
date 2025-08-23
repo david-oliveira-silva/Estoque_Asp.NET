@@ -15,8 +15,12 @@ namespace ProjetoWeb.Controllers
             this.produtoService = produtoService;
         }
 
-      
+        [HttpGet]
+        public IActionResult CadastrarProdutos()
+        {
 
+            return View();
+        }
         [HttpPost]
         public IActionResult CadastrarProdutos(string nomeProduto, decimal valorProduto)
         {
@@ -33,6 +37,34 @@ namespace ProjetoWeb.Controllers
                 return View();
             }
         }
+        [HttpGet]
+        public IActionResult DeletarProduto(int?produtoID) { 
+        
+            var produto = produtoService.listarProdutos().FirstOrDefault(p => p.produtoID == produtoID);
+
+            if (produto == null)
+            {
+                TempData["Erro"] = "Produto não encontrado!";
+                return RedirectToAction("ListarProdutos"); // Redireciona para a lista de produtos
+            }
+            return View(produto);
+        }
+
+        [HttpPost]
+        public IActionResult DeletarProduto(ProdutoModel produtoModel) {
+
+            try
+            {
+                TempData["Sucesso"] = "Produto removido com sucesso";
+                produtoService.RemoverProduto(produtoModel);
+                return RedirectToAction("ListarProdutos");
+            }
+            catch (Exception ex) {
+
+                TempData["Erro"] = ex.Message;
+                return View(produtoModel);
+            }
+        }
 
         [HttpGet]
         public IActionResult ListarProdutos()
@@ -41,10 +73,6 @@ namespace ProjetoWeb.Controllers
             return View(listProduto);
         }
         
-        public IActionResult CadastrarProdutos()
-        {
-           
-            return View();
-        }
+      
     } 
 }

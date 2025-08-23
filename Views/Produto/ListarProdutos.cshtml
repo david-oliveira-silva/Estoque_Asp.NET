@@ -10,6 +10,8 @@
                     <th>Id</th>
                     <th>Nome</th>
                     <th>Valor</th>
+                    <th>Opções</th>
+
 
                 </tr>
             </thead>
@@ -21,6 +23,15 @@
                         <td>@p.produtoID</td>
                         <td>@p.nomeProduto</td>
                         <td>@p.valorProduto.ToString("C" ,new System.Globalization.CultureInfo("pt-BR"))</td>
+                        <td>
+                            <form asp-controller = "Produto" asp-action="DeletarProduto" method="get">
+                            <input type="hidden" name="produtoID" value="@p.produtoID"></input>
+                            <input type="hidden" name="nomeProduto" value="@p.nomeProduto"></input>
+                             <input type="hidden" name="valorProduto" value="@p.valorProduto"></input>
+                            <button asp-Controller = "Produto" asp-action ="DeletarProduto"  class="btn btn-danger">Deletar</button>
+                            <a class="btn btn-primary">Editar</a>
+                            </form>
+                        </td>
 
                     </tr>
                 }

@@ -1,7 +1,14 @@
 ﻿@model List<ProdutoModel>
 
 <link rel="stylesheet" href="~/css/ListarProdutos.css">
+
+<div class="Header">
+    <h1>Lista de Produtos</h1>
+    <a asp-controller ="Produto" asp-action ="CadastrarProdutos"class="btn btn-primary">CadastrarProduto</a>
+
+</div>
 <div class="Tab-Container">
+
     <div class="Tabela">
        
         <table>

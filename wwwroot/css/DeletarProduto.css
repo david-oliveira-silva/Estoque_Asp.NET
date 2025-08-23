@@ -1,0 +1,53 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+}
+
+.Form-Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+    .Form-Container h2 {
+        text-align: center;
+    }
+
+.Formulario {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px;
+    width: 600px;
+    height: 340px;
+    align-items: center;
+    border-radius: 10px;
+}
+
+    .Formulario input {
+        display: flex;
+        width: 500px;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .Formulario label {
+        margin: 15px;
+    }
+
+
+
+.Botoes {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+    .Botoes button {
+        width: 200px
+    }
+
+    .Botoes a {
+        width: 200px
+    }

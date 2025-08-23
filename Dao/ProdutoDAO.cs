@@ -1,6 +1,7 @@
 ﻿using FirebirdSql.Data.FirebirdClient;
 using ProjetoWeb.Data;
 using ProjetoWeb.Models;
+using System.Security.Cryptography;
 
 namespace ProjetoWeb.Dao
 {
@@ -41,6 +42,23 @@ namespace ProjetoWeb.Dao
             FirebirdConnection.CloseConnection(fbConnection);
 
         }
+
+        void IProdutoDAO.atualizarProduto(ProdutoModel produtoModel)
+        {
+            FirebirdConnection.OpenConnection(fbConnection);
+
+            string queryUpdate = "UPDATE produtos SET nomeProduto = @nomeProduto ,valorProduto = @valorProduto WHERE produtoId = @produtoID";
+
+            using (var cmdUpdate = new FbCommand(queryUpdate, fbConnection))
+            {
+                cmdUpdate.Parameters.AddWithValue("@produtoID", produtoModel.produtoID);
+                cmdUpdate.Parameters.AddWithValue("@nomeProduto", produtoModel.nomeProduto);
+                cmdUpdate.Parameters.AddWithValue("@valorProduto", produtoModel.valorProduto);
+                cmdUpdate.ExecuteNonQuery() ;
+            }
+            FirebirdConnection.CloseConnection(fbConnection);
+
+        }
         List<ProdutoModel> IProdutoDAO.listarProduto()
         {
 
@@ -73,10 +91,7 @@ namespace ProjetoWeb.Dao
         }
 
 
-        void IProdutoDAO.atualizarProduto(ProdutoModel produtoModel)
-        {
-            throw new NotImplementedException();
-        }
+       
         
 
         

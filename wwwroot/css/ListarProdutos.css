@@ -26,8 +26,17 @@
 }
 
 .Tabela td:last-child {
-    width: 150px; /* Ajuste conforme necessário */
+    width: 200px; /* Ajuste conforme necessário */
     white-space: nowrap; /* Evita quebra de linha */
     text-align: center; /* Centraliza os botões */
 }
+.Botoes{
+    display:flex;
+    flex-direction:row;
+    gap:10px;
+}
+
+
+
+
 

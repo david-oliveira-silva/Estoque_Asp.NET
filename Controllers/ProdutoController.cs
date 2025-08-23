@@ -67,6 +67,28 @@ namespace ProjetoWeb.Controllers
         }
 
         [HttpGet]
+
+        public ActionResult EditarProduto(int? produtoID)
+        {
+            var produto = produtoService.listarProdutos().FirstOrDefault(p => p.produtoID == produtoID);
+            return View(produto);
+        }
+        [HttpPost]
+        public ActionResult EditarProduto(ProdutoModel produtoModel) {
+
+            try
+            {
+                TempData["Sucesso"] = "Produto editado com sucesso";
+                produtoService.editarProduto(produtoModel);
+                return RedirectToAction("ListarProdutos");
+            }
+            catch (Exception ex) {
+                TempData["Erro"] = ex.Message;
+                return View(produtoModel) ;
+            }
+        }
+
+        [HttpGet]
         public IActionResult ListarProdutos()
         {
          var listProduto = produtoService.listarProdutos();

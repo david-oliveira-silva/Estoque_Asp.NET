@@ -39,6 +39,15 @@ namespace ProjetoWeb.Service
             produtoDAO.removerProduto(produtoModel);
         }
 
+        public void editarProduto(ProdutoModel produtoModel)
+        {
+            if(produtoModel == null)
+            {
+                throw new Exception("Produto não encontrado");
+            }
+            produtoDAO.atualizarProduto(produtoModel);
+        }
+
         public List<ProdutoModel> listarProdutos()
         {
 

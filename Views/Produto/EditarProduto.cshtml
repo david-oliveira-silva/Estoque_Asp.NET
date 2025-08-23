@@ -1,0 +1,38 @@
+﻿@model ProdutoModel
+
+<link rel="stylesheet" href="~/css/DeletarProduto.css">
+
+<div class="Form-Container">
+    @if (TempData["Sucesso"] != null)
+    {
+        <p style="color:green">@TempData["Sucesso"]</p>
+    }
+    @if (TempData["ERRO"] != null)
+    {
+        <p style="color:red">@TempData["ERRO"]</p>
+    }
+    <form aps-controller="Produto" asp-action="EditarProduto" method="post">
+
+        <div class="Formulario">
+
+            <h2>Editar Produto</h2>
+            
+            <div id="nomeProduto">
+                <label>Nome Produto</label>
+                <input type="text" id="nome " name="nomeProduto" value="@Model.nomeProduto" placeholder="Digite o nome do produto"/>
+            </div>
+            <div id="valorProduto">
+                <label>Valor Produto</label>
+                <input type="text" id="nome" name="valorProduto" value="@Model.valorProduto" placeholder="Digite o valor do produto"/>
+            </div>
+            <div class="Botoes">
+                <input type="hidden" name="ProdutoId" value="@Model.produtoID"></input>
+                <button class="btn btn-success" type="submit">Confirmar</button>
+                <a asp-controller=Produto asp-action="ListarProdutos" class="btn btn-primary">Voltar</a>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+
